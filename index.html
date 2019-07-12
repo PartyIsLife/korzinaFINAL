@@ -86,7 +86,7 @@
             lifez = game.add.sprite(Math.floor(Math.random() * game.width), 5, 'life5');//Сердце
             lifez.anchor.set(0.5);
             game.physics.enable(lifez, Phaser.Physics.ARCADE);
-            speed = speed + 30;
+            speed = speed + 20;
             lifez.body.velocity.set(0, speed);
             maxHealth()
     }, 10000);
@@ -112,7 +112,7 @@
         text.text = score;
         food.x = Math.floor(Math.random() * game.width);
         food.y = 0;
-        speed = speed + 15;
+        speed = speed + 5;
         food.body.velocity.set(0,speed);
         if (life1.text === 5){
 
@@ -126,7 +126,7 @@ win1 ();
         life1.text = life;
         bombz.x = -100;
         bombz.y = 0;
-        speed = speed + 15;
+        speed = speed + 10;
         bombz.body.velocity.set(0,speed);
         zhizni();
         loose1();
@@ -164,7 +164,7 @@ function heartz(){
         life = 5; life1.text = life;
     }
     function win1() {
-        if (score == 2147483647){
+        if (score == 2000){
             alert('Вы выйграли!');
     }
     }
