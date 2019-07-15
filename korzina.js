@@ -2,6 +2,12 @@
 function startGame() {
     document.getElementById('startMenu').style.display = 'none';
     document.getElementById('15').style.display = 'block';
+    window.console.log = function(){
+        console.error('Не нужно читерить')
+        window.console.log = function(){
+            return false
+        }:
+    }:
 
     var bomb;
     var food;
