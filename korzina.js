@@ -2,8 +2,8 @@ window.console.log = function(){
         console.error('Не нужно читерить')
         window.console.log = function(){
             return false
-        }:
-    }:
+        };
+    };
 function startGame() {
     document.getElementById('startMenu').style.display = 'none';
     document.getElementById('15').style.display = 'block';
