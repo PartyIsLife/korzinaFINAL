@@ -1,9 +1,11 @@
 window.console.log = function(){
-        console.error('РќРµ РЅСѓР¶РЅРѕ С‡РёС‚РµСЂРёС‚СЊ')
+        console.error('Не нужно читерить')
         window.console.log = function(){
             return false
         };
     };
+
+
 function startGame() {
     document.getElementById('startMenu').style.display = 'none';
     document.getElementById('15').style.display = 'block';
@@ -26,24 +28,24 @@ function startGame() {
         });
 
     function preload() {
-        game.load.image('fon', 'white.png');//Р¤РћРќ
-        game.load.image('fruit', 'apple.png');//РЇР‘Р›РћРљРћ
-        game.load.image('basket', 'basket.png');//РљРћР Р—РРќРђ
-        game.load.image('bomb', 'bomb-4.png');//Р‘РћРњР‘Рђ
-        game.load.spritesheet('vzryv1', 'vzryv.png');//РЅРµСЂР°Р±РѕС‚Р°СЋС‰Р°СЏ Р°РЅРёРјР°С†РёСЏ
-        game.load.image('life5', 'heart.png');//РЎРµСЂРґС†Рµ
+        game.load.image('fon', 'white.png');//ФОН
+        game.load.image('fruit', 'apple.png');//ЯБЛОКО
+        game.load.image('basket', 'basket.png');//КОРЗИНА
+        game.load.image('bomb', 'bomb-4.png');//БОМБА
+        game.load.spritesheet('vzryv1', 'vzryv.png');//неработающая анимация
+        game.load.image('life5', 'heart.png');//Сердце
     }
 
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        game.add.tileSprite(1, 1, game.width, game.height, 'fon');//С„РѕРЅ
-        basketz = game.add.sprite(game.width / 2, game.height / 2 + 50, 'basket');//РљРѕСЂР·РёРЅР°
+        game.add.tileSprite(1, 1, game.width, game.height, 'fon');//фон
+        basketz = game.add.sprite(game.width / 2, game.height / 2 + 50, 'basket');//Корзина
         basketz.anchor.set(0.5);
         game.physics.enable(basketz, Phaser.Physics.ARCADE);
         basketz.body.immovable = true;
         zfood();
 
-        lifez = game.add.sprite(Math.floor(Math.random() * game.width), 5, 'lifez');//РЎРµСЂРґС†Рµ
+        lifez = game.add.sprite(Math.floor(Math.random() * game.width), 5, 'lifez');//Сердце
         game.physics.arcade.collide(basketz, lifez, heartz);
         lifez.x = game.width + 1000;
 
@@ -87,7 +89,7 @@ function startGame() {
     setInterval(function () {
         game.physics.arcade.collide(basketz, lifez, heartz);
 
-        lifez = game.add.sprite(Math.floor(Math.random() * game.width), 5, 'life5');//РЎРµСЂРґС†Рµ
+        lifez = game.add.sprite(Math.floor(Math.random() * game.width), 5, 'life5');//Сердце
         lifez.anchor.set(0.5);
         game.physics.enable(lifez, Phaser.Physics.ARCADE);
         speed = speed + 20;
@@ -176,13 +178,13 @@ function startGame() {
 
     function win1() {
         if (score == 2000) {
-            alert('Р’С‹ РІС‹Р№РіСЂР°Р»Рё!');
+            alert('Вы выйграли!');
         }
     }
 
     function loose1() {
         if (life == 0) {
-            alert('Р’С‹ РџР РћРР“Р РђР›Р!');
+            alert('Вы ПРОИГРАЛИ!');
             window.location.reload()
         }
     }
